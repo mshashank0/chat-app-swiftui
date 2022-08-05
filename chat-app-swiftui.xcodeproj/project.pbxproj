@@ -95,7 +95,12 @@
 			isa = PBXGroup;
 			children = (
 				94A20247289D8AC100C75FD4 /* chat_app_swiftuiApp.swift */,
-				94A20249289D8AC100C75FD4 /* ContentView.swift */,
+				94A20271289D8C2700C75FD4 /* Views */,
+				94A20273289D8C5000C75FD4 /* ViewModels */,
+				94A20272289D8C3000C75FD4 /* Models */,
+				94A20274289D8C5600C75FD4 /* Services */,
+				94A20275289D8C5E00C75FD4 /* Helpers */,
+				94A20276289D8C8600C75FD4 /* Fonts */,
 				94A2024B289D8AC200C75FD4 /* Assets.xcassets */,
 				94A2024D289D8AC200C75FD4 /* Preview Content */,
 			);
@@ -125,6 +130,49 @@
 				94A20264289D8AC200C75FD4 /* chat_app_swiftuiUITestsLaunchTests.swift */,
 			);
 			path = "chat-app-swiftuiUITests";
+			sourceTree = "<group>";
+		};
+		94A20271289D8C2700C75FD4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				94A20249289D8AC100C75FD4 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		94A20272289D8C3000C75FD4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		94A20273289D8C5000C75FD4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		94A20274289D8C5600C75FD4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		94A20275289D8C5E00C75FD4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		94A20276289D8C8600C75FD4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
