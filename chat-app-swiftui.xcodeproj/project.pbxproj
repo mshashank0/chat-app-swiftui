@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94865EB8289D95D3002D09FF /* LexendDeca-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94865EB5289D95D3002D09FF /* LexendDeca-Bold.ttf */; };
+		94865EB9289D95D3002D09FF /* LexendDeca-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94865EB6289D95D3002D09FF /* LexendDeca-Regular.ttf */; };
+		94865EBA289D95D3002D09FF /* LexendDeca-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94865EB7289D95D3002D09FF /* LexendDeca-SemiBold.ttf */; };
+		94865EBC289D9A73002D09FF /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865EBB289D9A73002D09FF /* Fonts.swift */; };
 		94A20248289D8AC100C75FD4 /* chat_app_swiftuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A20247289D8AC100C75FD4 /* chat_app_swiftuiApp.swift */; };
 		94A2024A289D8AC100C75FD4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A20249289D8AC100C75FD4 /* ContentView.swift */; };
 		94A2024C289D8AC200C75FD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94A2024B289D8AC200C75FD4 /* Assets.xcassets */; };
@@ -34,6 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		94865EB4289D959B002D09FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		94865EB5289D95D3002D09FF /* LexendDeca-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendDeca-Bold.ttf"; sourceTree = "<group>"; };
+		94865EB6289D95D3002D09FF /* LexendDeca-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendDeca-Regular.ttf"; sourceTree = "<group>"; };
+		94865EB7289D95D3002D09FF /* LexendDeca-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendDeca-SemiBold.ttf"; sourceTree = "<group>"; };
+		94865EBB289D9A73002D09FF /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		94A20244289D8AC100C75FD4 /* chat-app-swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "chat-app-swiftui.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A20247289D8AC100C75FD4 /* chat_app_swiftuiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chat_app_swiftuiApp.swift; sourceTree = "<group>"; };
 		94A20249289D8AC100C75FD4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -94,6 +103,7 @@
 		94A20246289D8AC100C75FD4 /* chat-app-swiftui */ = {
 			isa = PBXGroup;
 			children = (
+				94865EB4289D959B002D09FF /* Info.plist */,
 				94A20247289D8AC100C75FD4 /* chat_app_swiftuiApp.swift */,
 				94A20271289D8C2700C75FD4 /* Views */,
 				94A20273289D8C5000C75FD4 /* ViewModels */,
@@ -164,6 +174,7 @@
 		94A20275289D8C5E00C75FD4 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				94865EBB289D9A73002D09FF /* Fonts.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -171,6 +182,9 @@
 		94A20276289D8C8600C75FD4 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				94865EB5289D95D3002D09FF /* LexendDeca-Bold.ttf */,
+				94865EB6289D95D3002D09FF /* LexendDeca-Regular.ttf */,
+				94865EB7289D95D3002D09FF /* LexendDeca-SemiBold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -281,6 +295,9 @@
 			files = (
 				94A2024F289D8AC200C75FD4 /* Preview Assets.xcassets in Resources */,
 				94A2024C289D8AC200C75FD4 /* Assets.xcassets in Resources */,
+				94865EBA289D95D3002D09FF /* LexendDeca-SemiBold.ttf in Resources */,
+				94865EB9289D95D3002D09FF /* LexendDeca-Regular.ttf in Resources */,
+				94865EB8289D95D3002D09FF /* LexendDeca-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94A2024A289D8AC100C75FD4 /* ContentView.swift in Sources */,
+				94865EBC289D9A73002D09FF /* Fonts.swift in Sources */,
 				94A20248289D8AC100C75FD4 /* chat_app_swiftuiApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,6 +486,7 @@
 				DEVELOPMENT_TEAM = HEJDYB7G5K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "chat-app-swiftui/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -497,6 +516,7 @@
 				DEVELOPMENT_TEAM = HEJDYB7G5K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "chat-app-swiftui/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
