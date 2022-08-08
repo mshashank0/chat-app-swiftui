@@ -9,6 +9,10 @@ import SwiftUI
 
 @main
 struct chat_app_swiftuiApp: App {
+    
+    //register app delegate for Firebase setup
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
     var body: some Scene {
         WindowGroup {
             RootView()
