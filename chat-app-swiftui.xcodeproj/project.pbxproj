@@ -22,6 +22,13 @@
 		94865ED228A0D206002D09FF /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 94865ED128A0D206002D09FF /* FirebaseStorage */; };
 		94865ED428A0D2BB002D09FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865ED328A0D2BB002D09FF /* AppDelegate.swift */; };
 		94865ED728A1586C002D09FF /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865ED628A1586C002D09FF /* AuthViewModel.swift */; };
+		94865EDA28A15FAC002D09FF /* OnboardingContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865ED928A15FAC002D09FF /* OnboardingContainerView.swift */; };
+		94865EDC28A16497002D09FF /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865EDB28A16497002D09FF /* WelcomeView.swift */; };
+		94865EDE28A16526002D09FF /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865EDD28A16526002D09FF /* PhoneNumberView.swift */; };
+		94865EE028A1653A002D09FF /* VerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865EDF28A1653A002D09FF /* VerificationView.swift */; };
+		94865EE228A1654C002D09FF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865EE128A1654C002D09FF /* ProfileView.swift */; };
+		94865EE428A16560002D09FF /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865EE328A1655F002D09FF /* ContactsView.swift */; };
+		94865EE628A166E6002D09FF /* OnboardingButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865EE528A166E6002D09FF /* OnboardingButtonStyle.swift */; };
 		94A20248289D8AC100C75FD4 /* chat_app_swiftuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A20247289D8AC100C75FD4 /* chat_app_swiftuiApp.swift */; };
 		94A2024A289D8AC100C75FD4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A20249289D8AC100C75FD4 /* RootView.swift */; };
 		94A2024C289D8AC200C75FD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94A2024B289D8AC200C75FD4 /* Assets.xcassets */; };
@@ -60,6 +67,13 @@
 		94865ED328A0D2BB002D09FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94865ED528A0D59E002D09FF /* chat-app-swiftui.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "chat-app-swiftui.entitlements"; sourceTree = "<group>"; };
 		94865ED628A1586C002D09FF /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		94865ED928A15FAC002D09FF /* OnboardingContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerView.swift; sourceTree = "<group>"; };
+		94865EDB28A16497002D09FF /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		94865EDD28A16526002D09FF /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
+		94865EDF28A1653A002D09FF /* VerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
+		94865EE128A1654C002D09FF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		94865EE328A1655F002D09FF /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
+		94865EE528A166E6002D09FF /* OnboardingButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingButtonStyle.swift; sourceTree = "<group>"; };
 		94A20244289D8AC100C75FD4 /* chat-app-swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "chat-app-swiftui.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A20247289D8AC100C75FD4 /* chat_app_swiftuiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chat_app_swiftuiApp.swift; sourceTree = "<group>"; };
 		94A20249289D8AC100C75FD4 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -110,6 +124,19 @@
 				94865EC228A0CE0B002D09FF /* TabBarButton.swift */,
 			);
 			path = "Custom Tab Bar";
+			sourceTree = "<group>";
+		};
+		94865ED828A15BD1002D09FF /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				94865ED928A15FAC002D09FF /* OnboardingContainerView.swift */,
+				94865EDB28A16497002D09FF /* WelcomeView.swift */,
+				94865EDD28A16526002D09FF /* PhoneNumberView.swift */,
+				94865EDF28A1653A002D09FF /* VerificationView.swift */,
+				94865EE128A1654C002D09FF /* ProfileView.swift */,
+				94865EE328A1655F002D09FF /* ContactsView.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		94A2023B289D8AC000C75FD4 = {
@@ -180,6 +207,7 @@
 		94A20271289D8C2700C75FD4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				94865ED828A15BD1002D09FF /* Onboarding */,
 				94865EBD28A0C3FC002D09FF /* Custom Tab Bar */,
 				94A20249289D8AC100C75FD4 /* RootView.swift */,
 			);
@@ -212,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				94865EBB289D9A73002D09FF /* Fonts.swift */,
+				94865EE528A166E6002D09FF /* OnboardingButtonStyle.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -372,11 +401,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				94865ED428A0D2BB002D09FF /* AppDelegate.swift in Sources */,
+				94865EDA28A15FAC002D09FF /* OnboardingContainerView.swift in Sources */,
 				94865EC128A0C453002D09FF /* CustomTabBar.swift in Sources */,
 				94A2024A289D8AC100C75FD4 /* RootView.swift in Sources */,
+				94865EE628A166E6002D09FF /* OnboardingButtonStyle.swift in Sources */,
+				94865EE228A1654C002D09FF /* ProfileView.swift in Sources */,
+				94865EDC28A16497002D09FF /* WelcomeView.swift in Sources */,
 				94865ED728A1586C002D09FF /* AuthViewModel.swift in Sources */,
 				94865EBC289D9A73002D09FF /* Fonts.swift in Sources */,
 				94865EC328A0CE0B002D09FF /* TabBarButton.swift in Sources */,
+				94865EE028A1653A002D09FF /* VerificationView.swift in Sources */,
+				94865EE428A16560002D09FF /* ContactsView.swift in Sources */,
+				94865EDE28A16526002D09FF /* PhoneNumberView.swift in Sources */,
 				94A20248289D8AC100C75FD4 /* chat_app_swiftuiApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

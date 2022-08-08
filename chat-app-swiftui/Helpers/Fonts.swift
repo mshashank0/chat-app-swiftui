@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 extension Font {
-    public static var body: Font {
+    public static var bodyParagraph: Font {
         return Font.custom("LexendDeca-Regular", size: 14)
     }
     
@@ -17,7 +17,7 @@ extension Font {
         return Font.custom("LexendDeca-SemiBold", size: 14)
     }
     
-    public static var caption: Font {
+    public static var smallText: Font {
         return Font.custom("LexendDeca-Regular", size: 10)
     }
     
@@ -29,7 +29,7 @@ extension Font {
         return Font.custom("LexendDeca-Regular", size: 16)
     }
     
-    public static var title: Font {
+    public static var titleText: Font {
         return Font.custom("LexendDeca-Bold", size: 23)
     }
     
