@@ -14,6 +14,14 @@ struct ProfileView: View {
     @State var firstName = ""
     @State var lastName = ""
     
+    @State var selectedImage: UIImage?
+    @State var isPickerShowing = false
+    @State var source: UIImagePickerController.SourceType = .photoLibrary
+    
+    @State var isSourceMenuShowing = false
+    
+    @State var isSaveButtonDisabled = false
+    
     var body: some View {
         VStack {
             
@@ -28,16 +36,23 @@ struct ProfileView: View {
             Spacer()
             
             Button {
-                //
+                isSourceMenuShowing = true
             } label: {
                 ZStack {
-                    Circle()
-                        .foregroundColor(Color.white)
+                    if selectedImage != nil {
+                        Image(uiImage: selectedImage!)
+                            .resizable()
+                            .scaledToFill()
+                            .clipShape(Circle())
+                    }
+                    else {
+                        Circle()
+                            .foregroundColor(Color.white)
+                        Image(systemName: "camera.fill")
+                            .tint(Color("icons-input"))
+                    }
                     Circle()
                         .stroke(Color("profile-image-border"), lineWidth: 2)
-                    
-                    Image(systemName: "camera.fill")
-                        .tint(Color("icons-input"))
                 }
                 .frame(width: 134, height: 134)
             }
@@ -53,15 +68,52 @@ struct ProfileView: View {
             Spacer()
             
             Button {
-                currentStep = .contacts
+                isSaveButtonDisabled = true
+                DatabaseService().setUserProfileData(firstname: firstName,
+                                                     lastName: lastName,
+                                                     photo: selectedImage) { success in
+                    if success {
+                        currentStep = .contacts
+                        
+                    }
+                    else {
+                        
+                    }
+                    isSaveButtonDisabled = false
+                }
             } label: {
-                Text("Continue")
+                Text(isSaveButtonDisabled ? "Uploading":"Save")
             }
             .buttonStyle(OnboardingButtonStyle())
+            .disabled(isSaveButtonDisabled)
             .padding(.bottom, 87)
             
         }
+        .confirmationDialog("Choose from", isPresented: $isSourceMenuShowing, actions: {
+            
+            Button {
+                source = .photoLibrary
+                isPickerShowing = true
+            } label: {
+                Text("Photo Library")
+            }
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                Button {
+                    source = .camera
+                    isPickerShowing = true
+                } label: {
+                    Text("Camera")
+                }
+            }
+            
+        })
         .padding(.horizontal, 20)
+        .sheet(isPresented: $isPickerShowing) {
+            ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing, source: source)
+        }
+        
+        
+        
     }
 }
 

@@ -34,6 +34,7 @@
 		94865F0628A42E9E002D09FF /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865F0528A42E9E002D09FF /* ContactsViewModel.swift */; };
 		94865F0828A4CE72002D09FF /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865F0728A4CE71002D09FF /* DatabaseService.swift */; };
 		94865F0A28A4CFB8002D09FF /* TextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865F0928A4CFB8002D09FF /* TextHelper.swift */; };
+		94865F0C28A4D930002D09FF /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865F0B28A4D930002D09FF /* ImagePicker.swift */; };
 		94A20248289D8AC100C75FD4 /* chat_app_swiftuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A20247289D8AC100C75FD4 /* chat_app_swiftuiApp.swift */; };
 		94A2024A289D8AC100C75FD4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A20249289D8AC100C75FD4 /* RootView.swift */; };
 		94A2024C289D8AC200C75FD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94A2024B289D8AC200C75FD4 /* Assets.xcassets */; };
@@ -84,6 +85,7 @@
 		94865F0528A42E9E002D09FF /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
 		94865F0728A4CE71002D09FF /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		94865F0928A4CFB8002D09FF /* TextHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHelper.swift; sourceTree = "<group>"; };
+		94865F0B28A4D930002D09FF /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		94A20244289D8AC100C75FD4 /* chat-app-swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "chat-app-swiftui.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A20247289D8AC100C75FD4 /* chat_app_swiftuiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chat_app_swiftuiApp.swift; sourceTree = "<group>"; };
 		94A20249289D8AC100C75FD4 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				94865EDB28A16497002D09FF /* WelcomeView.swift */,
 				94865EDD28A16526002D09FF /* PhoneNumberView.swift */,
 				94865EDF28A1653A002D09FF /* VerificationView.swift */,
+				94865F0B28A4D930002D09FF /* ImagePicker.swift */,
 				94865EE128A1654C002D09FF /* ProfileView.swift */,
 				94865EE328A1655F002D09FF /* SyncContactsView.swift */,
 			);
@@ -432,6 +435,7 @@
 				94865F0628A42E9E002D09FF /* ContactsViewModel.swift in Sources */,
 				94865EE028A1653A002D09FF /* VerificationView.swift in Sources */,
 				94865EE428A16560002D09FF /* SyncContactsView.swift in Sources */,
+				94865F0C28A4D930002D09FF /* ImagePicker.swift in Sources */,
 				94865EDE28A16526002D09FF /* PhoneNumberView.swift in Sources */,
 				94A20248289D8AC100C75FD4 /* chat_app_swiftuiApp.swift in Sources */,
 			);
