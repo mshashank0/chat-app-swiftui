@@ -19,5 +19,7 @@
 		<string>LexendDeca-Bold.ttf</string>
 		<string>LexendDeca-Regular.ttf</string>
 	</array>
+	<key>NSContactsUsageDescription</key>
+	<string>It is used to get connected for chatting</string>
 </dict>
 </plist>

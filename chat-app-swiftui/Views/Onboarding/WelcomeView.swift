@@ -12,10 +12,6 @@ struct WelcomeView: View {
     @Binding var currentStep: OnboardingStep
     
     var body: some View {
-        ZStack {
-            Color("background")
-                .ignoresSafeArea()
-            
             VStack {
                 Spacer()
                 
@@ -42,11 +38,10 @@ struct WelcomeView: View {
                     .font(Font.caption)
                     .padding(.top, 16)
                     .padding(.bottom, 60)
-                
+
 
             }
             .padding(.horizontal, 20)
-        }
     }
 }
 

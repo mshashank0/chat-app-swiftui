@@ -16,6 +16,7 @@ struct chat_app_swiftuiApp: App {
     var body: some Scene {
         WindowGroup {
             RootView()
+                .environmentObject(ContactsViewModel())
         }
     }
 }

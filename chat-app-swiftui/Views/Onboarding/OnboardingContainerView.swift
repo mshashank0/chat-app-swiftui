@@ -19,6 +19,8 @@ struct OnboardingContainerView: View {
     
     @State var currentStep: OnboardingStep = .welcome
     
+    @Binding var isOnboaring: Bool
+    
     var body: some View {
         
         ZStack {
@@ -29,13 +31,13 @@ struct OnboardingContainerView: View {
             case .welcome:
                 WelcomeView(currentStep: $currentStep)
             case .phoneNumber:
-                PhoneNumberView()
+                PhoneNumberView(currentStep: $currentStep, phoneNumber: "")
             case .verification:
-                VerificationView()
+                VerificationView(currentStep: $currentStep)
             case .profile:
-                ProfileView()
+                ProfileView(currentStep: $currentStep)
             case .contacts:
-                ContactsView()
+                SyncContactsView(currentStep: $currentStep, isOnboarding: $isOnboaring)
             }
         }
         
@@ -44,6 +46,6 @@ struct OnboardingContainerView: View {
 
 struct OnboardingContainerView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingContainerView()
+        OnboardingContainerView( isOnboaring: .constant(true))
     }
 }
