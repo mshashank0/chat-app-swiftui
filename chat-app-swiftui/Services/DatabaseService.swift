@@ -103,13 +103,24 @@ class DatabaseService {
                 
                 if error == nil && meta != nil
                 {
-                    // Set that image path to the profile
-                    doc.setData(["photo": path], merge: true) { error in
-                        if error == nil {
-                            // Success, notify caller
-                            completion(true)
+                   
+                    // Get full url to image
+                    fileRef.downloadURL { url, error in
+                        // Check for errors
+                        if url != nil && error == nil {
+                            // Set that image path to the profile
+                            doc.setData(["photo": path], merge: true) { error in
+                                if error == nil {
+                                    // Success, notify caller
+                                    completion(true)
+                                }
+                            }
+                        }
+                        else {
+                            completion(false)
                         }
                     }
+                    
                 }
                 else {
                     

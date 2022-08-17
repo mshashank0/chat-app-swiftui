@@ -13,13 +13,21 @@ struct RootView: View {
     @State var isOnboarding = !AuthViewModel.isUserLoggedIn()
     
     var body: some View {
-        VStack {
-            Text("Hello, world!")
-                .padding()
-            
-            Spacer()
-            
-            CustomTabBar(selectedTab: $selectedTab)
+        ZStack {
+            Color("background")
+                .ignoresSafeArea()
+            VStack {
+                switch selectedTab {
+                case .chats:
+                    ChatsListView()
+                case .contacts:
+                    ContactsListView()
+                }
+                
+                Spacer()
+                
+                CustomTabBar(selectedTab: $selectedTab)
+            }
         }
         .fullScreenCover(isPresented: $isOnboarding) {
             // On onboarding dismiss
