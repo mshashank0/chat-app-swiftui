@@ -38,6 +38,11 @@
 		94865F1028A53981002D09FF /* ContactsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865F0F28A53981002D09FF /* ContactsListView.swift */; };
 		94865F1228A5398F002D09FF /* ChatsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865F1128A5398F002D09FF /* ChatsListView.swift */; };
 		94865F1428A5496E002D09FF /* ContactRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865F1328A5496E002D09FF /* ContactRow.swift */; };
+		94865F1728ADF472002D09FF /* ProfilePicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865F1628ADF472002D09FF /* ProfilePicView.swift */; };
+		94865F1928ADFA5A002D09FF /* ConversationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865F1828ADFA5A002D09FF /* ConversationView.swift */; };
+		94865F1B28ADFB7E002D09FF /* RoundedCornerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865F1A28ADFB7E002D09FF /* RoundedCornerExtension.swift */; };
+		94865F1D28AE1E4D002D09FF /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865F1C28AE1E4D002D09FF /* Chat.swift */; };
+		94865F2128AE210C002D09FF /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865F2028AE210C002D09FF /* ChatViewModel.swift */; };
 		94A20248289D8AC100C75FD4 /* chat_app_swiftuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A20247289D8AC100C75FD4 /* chat_app_swiftuiApp.swift */; };
 		94A2024A289D8AC100C75FD4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A20249289D8AC100C75FD4 /* RootView.swift */; };
 		94A2024C289D8AC200C75FD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94A2024B289D8AC200C75FD4 /* Assets.xcassets */; };
@@ -92,6 +97,11 @@
 		94865F0F28A53981002D09FF /* ContactsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListView.swift; sourceTree = "<group>"; };
 		94865F1128A5398F002D09FF /* ChatsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsListView.swift; sourceTree = "<group>"; };
 		94865F1328A5496E002D09FF /* ContactRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRow.swift; sourceTree = "<group>"; };
+		94865F1628ADF472002D09FF /* ProfilePicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePicView.swift; sourceTree = "<group>"; };
+		94865F1828ADFA5A002D09FF /* ConversationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationView.swift; sourceTree = "<group>"; };
+		94865F1A28ADFB7E002D09FF /* RoundedCornerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerExtension.swift; sourceTree = "<group>"; };
+		94865F1C28AE1E4D002D09FF /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		94865F2028AE210C002D09FF /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		94A20244289D8AC100C75FD4 /* chat-app-swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "chat-app-swiftui.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A20247289D8AC100C75FD4 /* chat_app_swiftuiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chat_app_swiftuiApp.swift; sourceTree = "<group>"; };
 		94A20249289D8AC100C75FD4 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -162,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				94865F1128A5398F002D09FF /* ChatsListView.swift */,
+				94865F1828ADFA5A002D09FF /* ConversationView.swift */,
 			);
 			path = ChatsView;
 			sourceTree = "<group>";
@@ -173,6 +184,14 @@
 				94865F1328A5496E002D09FF /* ContactRow.swift */,
 			);
 			path = ContactsView;
+			sourceTree = "<group>";
+		};
+		94865F1528ADF43C002D09FF /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				94865F1628ADF472002D09FF /* ProfilePicView.swift */,
+			);
+			path = Misc;
 			sourceTree = "<group>";
 		};
 		94A2023B289D8AC000C75FD4 = {
@@ -248,6 +267,7 @@
 				94865F0E28A53958002D09FF /* ContactsView */,
 				94865F0D28A53951002D09FF /* ChatsView */,
 				94865EBD28A0C3FC002D09FF /* Custom Tab Bar */,
+				94865F1528ADF43C002D09FF /* Misc */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -256,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				94865F0328A42D4D002D09FF /* User.swift */,
+				94865F1C28AE1E4D002D09FF /* Chat.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -265,6 +286,7 @@
 			children = (
 				94865ED628A1586C002D09FF /* AuthViewModel.swift */,
 				94865F0528A42E9E002D09FF /* ContactsViewModel.swift */,
+				94865F2028AE210C002D09FF /* ChatViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -284,6 +306,7 @@
 				94865EE528A166E6002D09FF /* OnboardingButtonStyle.swift */,
 				94865EE728A23304002D09FF /* ProfileTextFieldStyle.swift */,
 				94865F0928A4CFB8002D09FF /* TextHelper.swift */,
+				94865F1A28ADFB7E002D09FF /* RoundedCornerExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -462,10 +485,15 @@
 				94865F1428A5496E002D09FF /* ContactRow.swift in Sources */,
 				94865EE028A1653A002D09FF /* VerificationView.swift in Sources */,
 				94865F1028A53981002D09FF /* ContactsListView.swift in Sources */,
+				94865F1928ADFA5A002D09FF /* ConversationView.swift in Sources */,
 				94865EE428A16560002D09FF /* SyncContactsView.swift in Sources */,
 				94865F0C28A4D930002D09FF /* ImagePicker.swift in Sources */,
+				94865F2128AE210C002D09FF /* ChatViewModel.swift in Sources */,
+				94865F1D28AE1E4D002D09FF /* Chat.swift in Sources */,
+				94865F1B28ADFB7E002D09FF /* RoundedCornerExtension.swift in Sources */,
 				94865EDE28A16526002D09FF /* PhoneNumberView.swift in Sources */,
 				94A20248289D8AC100C75FD4 /* chat_app_swiftuiApp.swift in Sources */,
+				94865F1728ADF472002D09FF /* ProfilePicView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

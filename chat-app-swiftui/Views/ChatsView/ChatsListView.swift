@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct ChatsListView: View {
+    
+    @EnvironmentObject var chatViewModel: ChatViewModel
+    
     var body: some View {
-        Text("Chats")
+        if chatViewModel.chats.count > 0 {
+            List(chatViewModel.chats) { chat in
+                Text(chat.id ?? "Empty")
+            }
+        }
+        else {
+           Text("no chat")
+        }
     }
 }
 

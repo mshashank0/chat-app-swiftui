@@ -13,6 +13,8 @@ struct ContactsListView: View {
     
     @State var filterText = ""
     
+    @Binding var isChatShowing: Bool
+    
     var body: some View {
         
         VStack {
@@ -58,9 +60,19 @@ struct ContactsListView: View {
                 
                 // List
                 List(contactsViewModel.filteredUsers) { user in
-                    ContactRow(user: user)
-                        .listRowBackground(Color.clear)
-                        .listRowSeparator(.hidden)
+                    Button {
+                        
+                        // Display conversation view
+                        isChatShowing = true
+                        
+                    } label: {
+                        
+                        // Display rows
+                        ContactRow(user: user)
+                    }
+                    .buttonStyle(.plain)
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
                 }
                 .listStyle(.plain)
             }
@@ -93,6 +105,6 @@ struct ContactsListView: View {
 
 struct ContactsListView_Previews: PreviewProvider {
     static var previews: some View {
-        ContactsListView()
+        ContactsListView(isChatShowing: .constant(false))
     }
 }

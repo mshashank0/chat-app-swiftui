@@ -11,6 +11,7 @@ struct RootView: View {
     
     @State var selectedTab: Tabs = .contacts
     @State var isOnboarding = !AuthViewModel.isUserLoggedIn()
+    @State var isChatShowing = false
     
     var body: some View {
         ZStack {
@@ -21,7 +22,7 @@ struct RootView: View {
                 case .chats:
                     ChatsListView()
                 case .contacts:
-                    ContactsListView()
+                    ContactsListView(isChatShowing: $isChatShowing)
                 }
                 
                 Spacer()
@@ -32,7 +33,10 @@ struct RootView: View {
         .fullScreenCover(isPresented: $isOnboarding) {
             // On onboarding dismiss
         } content: {
-            OnboardingContainerView( isOnboaring: $isOnboarding)
+            OnboardingContainerView(isOnboaring: $isOnboarding)
+        }
+        .fullScreenCover(isPresented: $isChatShowing, onDismiss: nil) {
+            ConversationView(isChatShowing: $isChatShowing)
         }
 
 

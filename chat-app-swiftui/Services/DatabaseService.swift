@@ -103,7 +103,7 @@ class DatabaseService {
                 
                 if error == nil && meta != nil
                 {
-                   
+                    
                     // Get full url to image
                     fileRef.downloadURL { url, error in
                         // Check for errors
@@ -120,15 +120,12 @@ class DatabaseService {
                             completion(false)
                         }
                     }
-                    
                 }
                 else {
-                    
                     // Upload wasn't successful, notify caller
                     completion(false)
                 }
             }
-
         }
     }
     
@@ -156,4 +153,89 @@ class DatabaseService {
             
         }
     }
+    
+    // MARK: - Chat Methods
+    
+    /// This method returns all chat documents where the logged in user is a participant
+    func getAllChats(completion: @escaping([Chat]) -> Void) {
+        
+        // Get a reference to the database
+        let db = Firestore.firestore()
+        
+        // Perform a query against the chat collection for any chats where the user is a participant
+        let chatsQuery = db.collection("chats")
+            .whereField("participantsids",
+                        arrayContains: AuthViewModel.getUserId())
+        
+        chatsQuery.getDocuments { snapshot, error in
+            if snapshot != nil && error == nil {
+                
+                var chats = [Chat]()
+                
+                // Loop through all the returned chat docs
+                for doc in snapshot!.documents {
+                    
+                    // Parse the data into Chat structs
+                    let chat = try? doc.data(as: Chat.self)
+                    
+                    // Add the chat into the array
+                    if let chat = chat {
+                        chats.append(chat)
+                    }
+                }
+                
+                // Return the data
+                completion(chats)
+            }
+            else {
+                print("Error in database retrieval")
+            }
+        }
+    }
+    
+    /// This method returns all messages for a given chat
+    func getAllMessages(chat: Chat, completion: @escaping ([ChatMessage]) -> Void) {
+        
+        // Check that the id is not nil
+        guard chat.id != nil else {
+            // Can't fetch data
+            completion([ChatMessage]())
+            return
+        }
+        
+        // Get a reference to the database
+        let db = Firestore.firestore()
+        
+        // Create the query
+        let msgsQuery = db.collection("chats")
+            .document(chat.id!)
+            .collection("msgs")
+            .order(by: "timestamp")
+        
+        // Perform the query
+        msgsQuery.getDocuments { snapshot, error in
+            
+            if snapshot != nil && error == nil {
+                
+                // Loop through the msg documents and create ChatMessage instances
+                var messages = [ChatMessage]()
+                
+                for doc in snapshot!.documents {
+                    
+                    let msg = try? doc.data(as: ChatMessage.self)
+                    
+                    if let msg = msg {
+                        messages.append(msg)
+                    }
+                }
+                
+                // Return the results
+                completion(messages)
+            }
+            else {
+                print("Error in database retrieval")
+            }
+        }
+    }
+    
 }
