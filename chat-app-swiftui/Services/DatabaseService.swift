@@ -259,4 +259,20 @@ class DatabaseService {
                                 "timestamp": Date()])
     }
     
+    func createChat(chat: Chat, completion: @escaping (String) -> Void) {
+        
+        // Get a reference to the database
+        let db = Firestore.firestore()
+        
+        // Create a document
+        let doc = db.collection("chats").document()
+        
+        // Set the data for the document
+        try? doc.setData(from: chat, completion: { error in
+            
+            // Communicate the document id
+            completion(doc.documentID)
+        })
+    }
+    
 }

@@ -43,6 +43,7 @@
 		94865F1B28ADFB7E002D09FF /* RoundedCornerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865F1A28ADFB7E002D09FF /* RoundedCornerExtension.swift */; };
 		94865F1D28AE1E4D002D09FF /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865F1C28AE1E4D002D09FF /* Chat.swift */; };
 		94865F2128AE210C002D09FF /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865F2028AE210C002D09FF /* ChatViewModel.swift */; };
+		94865F2328B08A60002D09FF /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865F2228B08A60002D09FF /* DateHelper.swift */; };
 		94A20248289D8AC100C75FD4 /* chat_app_swiftuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A20247289D8AC100C75FD4 /* chat_app_swiftuiApp.swift */; };
 		94A2024A289D8AC100C75FD4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A20249289D8AC100C75FD4 /* RootView.swift */; };
 		94A2024C289D8AC200C75FD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94A2024B289D8AC200C75FD4 /* Assets.xcassets */; };
@@ -102,6 +103,7 @@
 		94865F1A28ADFB7E002D09FF /* RoundedCornerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerExtension.swift; sourceTree = "<group>"; };
 		94865F1C28AE1E4D002D09FF /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		94865F2028AE210C002D09FF /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		94865F2228B08A60002D09FF /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		94A20244289D8AC100C75FD4 /* chat-app-swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "chat-app-swiftui.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A20247289D8AC100C75FD4 /* chat_app_swiftuiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chat_app_swiftuiApp.swift; sourceTree = "<group>"; };
 		94A20249289D8AC100C75FD4 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 				94865EE728A23304002D09FF /* ProfileTextFieldStyle.swift */,
 				94865F0928A4CFB8002D09FF /* TextHelper.swift */,
 				94865F1A28ADFB7E002D09FF /* RoundedCornerExtension.swift */,
+				94865F2228B08A60002D09FF /* DateHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				94865F0828A4CE72002D09FF /* DatabaseService.swift in Sources */,
 				94865ED428A0D2BB002D09FF /* AppDelegate.swift in Sources */,
 				94865EDA28A15FAC002D09FF /* OnboardingContainerView.swift in Sources */,
+				94865F2328B08A60002D09FF /* DateHelper.swift in Sources */,
 				94865EC128A0C453002D09FF /* CustomTabBar.swift in Sources */,
 				94865F0A28A4CFB8002D09FF /* TextHelper.swift in Sources */,
 				94A2024A289D8AC100C75FD4 /* RootView.swift in Sources */,

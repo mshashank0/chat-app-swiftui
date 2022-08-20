@@ -77,4 +77,21 @@ class ContactsViewModel: ObservableObject {
            
         })
     }
+    
+    func getParticipants(ids: [String]) -> [User] {
+        
+        // Filter out the users list for only the participants based on ids passed in
+        let foundUsers = users.filter { user in
+            
+            if user.id == nil {
+                return false
+            }
+            else {
+                return ids.contains(user.id!)
+            }
+                
+        }
+        
+        return foundUsers
+    }
 }
