@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct ProfilePicView: View {
-   
+    
     var user: User
     
     var body: some View {
         
         ZStack {
-           
+            
             // Check if user has a photo set
             if user.photo == nil {
                 
@@ -28,32 +28,51 @@ struct ProfilePicView: View {
                 
             }
             else {
-                // Create URL from user photo url
-                let photoUrl = URL(string: user.photo ?? "")
                 
-                //Profile image
-                AsyncImage(url: photoUrl) { phase in
-                    switch phase {
-                    case .empty:
-                        // Currently fetching
-                        ProgressView()
-                    case .failure:
-                        // Display circle with first letter of first name
-                        ZStack {
-                            Circle()
-                                .foregroundColor(.white)
-                            Text(user.firstname?.prefix(1) ?? "")
-                                .bold()
+                // Check image cache, if it exists, use that
+                if let cachedImage = CacheService.getImage(forKey: user.photo!) {
+                    
+                    // Image is in cache so lets use it
+                    cachedImage
+                        .resizable()
+                        .clipShape(Circle())
+                        .scaledToFill()
+                        .clipped()
+                }
+                else {
+                    // Create URL from user photo url
+                    let photoUrl = URL(string: user.photo ?? "")
+                    
+                    //Profile image
+                    AsyncImage(url: photoUrl) { phase in
+                        switch phase {
+                        case .empty:
+                            // Currently fetching
+                            ProgressView()
+                        case .failure:
+                            // Display circle with first letter of first name
+                            ZStack {
+                                Circle()
+                                    .foregroundColor(.white)
+                                Text(user.firstname?.prefix(1) ?? "")
+                                    .bold()
+                            }
+                        case .success(let image):
+                            //Display image
+                            image
+                                .resizable()
+                                .clipShape(Circle())
+                                .scaledToFill()
+                                .clipped()
+                                .onAppear() {
+                                    // Save this image into cache
+                                    CacheService.setImage(image: image,
+                                                          forKey: user.photo!)
+                                }
+                            
+                        @unknown default:
+                            fatalError()
                         }
-                    case .success(let image):
-                        //Display image
-                        image
-                            .resizable()
-                            .clipShape(Circle())
-                            .scaledToFill()
-                            .clipped()
-                    @unknown default:
-                        fatalError()
                     }
                 }
             }

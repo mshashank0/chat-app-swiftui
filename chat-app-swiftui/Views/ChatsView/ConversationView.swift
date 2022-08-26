@@ -60,51 +60,60 @@ struct ConversationView: View {
             .frame(height: 104)
             
             // Chat log
-            ScrollView {
-                
-                VStack (spacing: 24) {
+            ScrollViewReader { proxy in
+                ScrollView {
                     
-                    ForEach (chatViewModel.messages) { msg in
-                        let isFromUser = msg.senderid == AuthViewModel.getUserId()
+                    VStack (spacing: 24) {
                         
-                        HStack {
+                        ForEach (Array(chatViewModel.messages.enumerated()), id: \.element) { index, msg in
+                            let isFromUser = msg.senderid == AuthViewModel.getUserId()
                             
-                            if isFromUser {
-                                // Timestamp
-                                Text(DateHelper.chatTimestampFrom(date: msg.timestamp))
-                                    .font(Font.smallText)
-                                    .foregroundColor(Color("text-timestamp"))
-                                    .padding(.trailing)
+                            HStack {
                                 
-                                Spacer()
+                                if isFromUser {
+                                    // Timestamp
+                                    Text(DateHelper.chatTimestampFrom(date: msg.timestamp))
+                                        .font(Font.smallText)
+                                        .foregroundColor(Color("text-timestamp"))
+                                        .padding(.trailing)
+                                    
+                                    Spacer()
+                                }
+                                
+                                // Message
+                                Text(msg.msg)
+                                    .font(Font.bodyParagraph)
+                                    .foregroundColor(isFromUser ? Color("text-button") : Color("text-primary"))
+                                    .padding(.vertical, 16)
+                                    .padding(.horizontal, 24)
+                                    .background(isFromUser ? Color("bubble-primary") : Color("bubble-secondary"))
+                                    .cornerRadius(30, corners: isFromUser ? [.topLeft, .topRight, .bottomLeft] : [.topLeft, .topRight, .bottomRight])
+                                
+                                if !isFromUser {
+                                    
+                                    Spacer()
+                                    
+                                    Text(DateHelper.chatTimestampFrom(date: msg.timestamp))
+                                        .font(Font.smallText)
+                                        .foregroundColor(Color("text-timestamp"))
+                                        .padding(.leading)
+                                }
                             }
-                            
-                            // Message
-                            Text(msg.msg)
-                                .font(Font.bodyParagraph)
-                                .foregroundColor(isFromUser ? Color("text-button") : Color("text-primary"))
-                                .padding(.vertical, 16)
-                                .padding(.horizontal, 24)
-                                .background(isFromUser ? Color("bubble-primary") : Color("bubble-secondary"))
-                                .cornerRadius(30, corners: isFromUser ? [.topLeft, .topRight, .bottomLeft] : [.topLeft, .topRight, .bottomRight])
-                            
-                            if !isFromUser {
-                                
-                                Spacer()
-                                
-                                Text(DateHelper.chatTimestampFrom(date: msg.timestamp))
-                                    .font(Font.smallText)
-                                    .foregroundColor(Color("text-timestamp"))
-                                    .padding(.leading)
-                            }
+                            .id(index)
                         }
                     }
+                    .padding(.horizontal)
+                    .padding(.top, 24)
+                    
                 }
-                .padding(.horizontal)
-                .padding(.top, 24)
-                
+                .background(Color("background"))
+                .onChange(of: chatViewModel.messages.count) { newCount in
+                    
+                    withAnimation {
+                        proxy.scrollTo(newCount - 1)
+                    }
+                }
             }
-            .background(Color("background"))
             
             // Chat message bar
             ZStack {
@@ -160,7 +169,7 @@ struct ConversationView: View {
                     // Send button
                     Button {
                         
-                        // TODO: Format data
+                        chatMessage = chatMessage.trimmingCharacters(in: .whitespacesAndNewlines)
                         
                         // Send message
                         chatViewModel.sendMessage(msg: chatMessage)
@@ -174,6 +183,7 @@ struct ConversationView: View {
                             .frame(width: 24, height: 24)
                             .tint(Color("icons-primary"))
                     }
+                    .disabled(chatMessage.trimmingCharacters(in: .whitespacesAndNewlines) == "")
 
                 }
                 .padding(.horizontal)
@@ -187,6 +197,11 @@ struct ConversationView: View {
             // Try to get the other participants as User instances
             let ids = chatViewModel.getParticipantIds()
             self.participants = contactsViewModel.getParticipants(ids: ids)
+        }
+        .onDisappear {
+            
+            // Do any necesary clean up before conversation view disappears
+            chatViewModel.conversationViewCleanup()
         }
         
     }

@@ -11,6 +11,10 @@ import Firebase
 import FirebaseStorage
 
 class DatabaseService {
+    
+    var chatListViewListeners = [ListenerRegistration]()
+    var conversationViewListeners = [ListenerRegistration]()
+    
     func getPlatformUsers(localContacts: [CNContact], completion: @escaping([User])->Void) {
         var platformUsers = [User]()
         
@@ -167,7 +171,7 @@ class DatabaseService {
             .whereField("participantsids",
                         arrayContains: AuthViewModel.getUserId())
         
-        chatsQuery.getDocuments { snapshot, error in
+        let listener = chatsQuery.addSnapshotListener { snapshot, error in
             if snapshot != nil && error == nil {
                 
                 var chats = [Chat]()
@@ -191,6 +195,9 @@ class DatabaseService {
                 print("Error in database retrieval")
             }
         }
+        
+        // Keep track of the listener so that we can close it later
+        chatListViewListeners.append(listener)
     }
     
     /// This method returns all messages for a given chat
@@ -213,7 +220,7 @@ class DatabaseService {
             .order(by: "timestamp")
         
         // Perform the query
-        msgsQuery.getDocuments { snapshot, error in
+        let listener = msgsQuery.addSnapshotListener { snapshot, error in
             
             if snapshot != nil && error == nil {
                 
@@ -236,6 +243,9 @@ class DatabaseService {
                 print("Error in database retrieval")
             }
         }
+        
+        // Keep track of listener so that we can close it later
+        conversationViewListeners.append(listener)
     }
     
     /// Send a message to the database
@@ -257,6 +267,13 @@ class DatabaseService {
                                 "msg": msg,
                                 "senderid": AuthViewModel.getUserId(),
                                 "timestamp": Date()])
+        
+        // Update chat document to reflect msg that was just sent
+        db.collection("chats")
+            .document(chat.id!)
+            .setData(["updated": Date(),
+                      "lastmsg": msg],
+                     merge: true)
     }
     
     func createChat(chat: Chat, completion: @escaping (String) -> Void) {
@@ -273,6 +290,18 @@ class DatabaseService {
             // Communicate the document id
             completion(doc.documentID)
         })
+    }
+    
+    func detachChatListViewListeners() {
+        for listener in chatListViewListeners {
+            listener.remove()
+        }
+    }
+    
+    func detachConversationViewListeners() {
+        for listener in conversationViewListeners {
+            listener.remove()
+        }
     }
     
 }

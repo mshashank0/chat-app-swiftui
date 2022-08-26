@@ -38,8 +38,8 @@ class TextHelper {
         stringvar = pureNumber
         
         // Limit characters to 17 to match +# (###) ###-####
-        if (stringvar.count > 17) {
-            stringvar = String(stringvar.prefix(17))
+        if (stringvar.count > 18) {
+            stringvar = String(stringvar.prefix(18))
         }
     }
 }

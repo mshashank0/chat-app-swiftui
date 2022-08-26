@@ -102,6 +102,14 @@ class ChatViewModel: ObservableObject {
         
     }
     
+    func conversationViewCleanup() {
+        databaseService.detachConversationViewListeners()
+    }
+    
+    func chatListViewCleanup() {
+        databaseService.detachChatListViewListeners()
+    }
+    
     // MARK: - Helper Methods
     
     /// Tasks in a list of user ids, removes the user from that list and returns the remaining ids

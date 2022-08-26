@@ -44,6 +44,8 @@
 		94865F1D28AE1E4D002D09FF /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865F1C28AE1E4D002D09FF /* Chat.swift */; };
 		94865F2128AE210C002D09FF /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865F2028AE210C002D09FF /* ChatViewModel.swift */; };
 		94865F2328B08A60002D09FF /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865F2228B08A60002D09FF /* DateHelper.swift */; };
+		94865F2528B3409E002D09FF /* ChatsListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865F2428B3409E002D09FF /* ChatsListRow.swift */; };
+		94865F3D28B8972E002D09FF /* CacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865F3C28B8972E002D09FF /* CacheService.swift */; };
 		94A20248289D8AC100C75FD4 /* chat_app_swiftuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A20247289D8AC100C75FD4 /* chat_app_swiftuiApp.swift */; };
 		94A2024A289D8AC100C75FD4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A20249289D8AC100C75FD4 /* RootView.swift */; };
 		94A2024C289D8AC200C75FD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94A2024B289D8AC200C75FD4 /* Assets.xcassets */; };
@@ -104,6 +106,8 @@
 		94865F1C28AE1E4D002D09FF /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		94865F2028AE210C002D09FF /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		94865F2228B08A60002D09FF /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		94865F2428B3409E002D09FF /* ChatsListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsListRow.swift; sourceTree = "<group>"; };
+		94865F3C28B8972E002D09FF /* CacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheService.swift; sourceTree = "<group>"; };
 		94A20244289D8AC100C75FD4 /* chat-app-swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "chat-app-swiftui.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A20247289D8AC100C75FD4 /* chat_app_swiftuiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chat_app_swiftuiApp.swift; sourceTree = "<group>"; };
 		94A20249289D8AC100C75FD4 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -175,6 +179,7 @@
 			children = (
 				94865F1128A5398F002D09FF /* ChatsListView.swift */,
 				94865F1828ADFA5A002D09FF /* ConversationView.swift */,
+				94865F2428B3409E002D09FF /* ChatsListRow.swift */,
 			);
 			path = ChatsView;
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				94865F0728A4CE71002D09FF /* DatabaseService.swift */,
+				94865F3C28B8972E002D09FF /* CacheService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -481,12 +487,14 @@
 				94865F1228A5398F002D09FF /* ChatsListView.swift in Sources */,
 				94865EE228A1654C002D09FF /* ProfileView.swift in Sources */,
 				94865EDC28A16497002D09FF /* WelcomeView.swift in Sources */,
+				94865F3D28B8972E002D09FF /* CacheService.swift in Sources */,
 				94865ED728A1586C002D09FF /* AuthViewModel.swift in Sources */,
 				94865EBC289D9A73002D09FF /* Fonts.swift in Sources */,
 				94865EE828A23304002D09FF /* ProfileTextFieldStyle.swift in Sources */,
 				94865EC328A0CE0B002D09FF /* TabBarButton.swift in Sources */,
 				94865F0628A42E9E002D09FF /* ContactsViewModel.swift in Sources */,
 				94865F1428A5496E002D09FF /* ContactRow.swift in Sources */,
+				94865F2528B3409E002D09FF /* ChatsListRow.swift in Sources */,
 				94865EE028A1653A002D09FF /* VerificationView.swift in Sources */,
 				94865F1028A53981002D09FF /* ContactsListView.swift in Sources */,
 				94865F1928ADFA5A002D09FF /* ConversationView.swift in Sources */,

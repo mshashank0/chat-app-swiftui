@@ -33,9 +33,9 @@ struct PhoneNumberView: View {
                 HStack {
                     TextField("e.g. +1 613 515 0123", text: $phoneNumber)
                         .font(Font.bodyParagraph)
-                        .keyboardType(.numberPad)
+                        .keyboardType(.phonePad)
                         .onReceive(Just(phoneNumber)) { _ in
-                            TextHelper.applyPatternOnNumbers(&phoneNumber, pattern: "+# (###) ###-####", replacementCharacter: "#")
+                            TextHelper.applyPatternOnNumbers(&phoneNumber, pattern: "+## (###) ###-####", replacementCharacter: "#")
                         }
                     
                     Spacer()
