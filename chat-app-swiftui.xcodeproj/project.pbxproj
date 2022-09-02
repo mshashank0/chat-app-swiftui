@@ -48,6 +48,7 @@
 		94865F3D28B8972E002D09FF /* CacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865F3C28B8972E002D09FF /* CacheService.swift */; };
 		94865F3F28BC90D4002D09FF /* ConversationTextMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865F3E28BC90D3002D09FF /* ConversationTextMessage.swift */; };
 		94865F4128BC90E0002D09FF /* ConversationPhotoMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865F4028BC90E0002D09FF /* ConversationPhotoMessage.swift */; };
+		94865F4328BDD5A8002D09FF /* ContactsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94865F4228BDD5A8002D09FF /* ContactsPicker.swift */; };
 		94A20248289D8AC100C75FD4 /* chat_app_swiftuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A20247289D8AC100C75FD4 /* chat_app_swiftuiApp.swift */; };
 		94A2024A289D8AC100C75FD4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A20249289D8AC100C75FD4 /* RootView.swift */; };
 		94A2024C289D8AC200C75FD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94A2024B289D8AC200C75FD4 /* Assets.xcassets */; };
@@ -112,6 +113,7 @@
 		94865F3C28B8972E002D09FF /* CacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheService.swift; sourceTree = "<group>"; };
 		94865F3E28BC90D3002D09FF /* ConversationTextMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTextMessage.swift; sourceTree = "<group>"; };
 		94865F4028BC90E0002D09FF /* ConversationPhotoMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationPhotoMessage.swift; sourceTree = "<group>"; };
+		94865F4228BDD5A8002D09FF /* ContactsPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsPicker.swift; sourceTree = "<group>"; };
 		94A20244289D8AC100C75FD4 /* chat-app-swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "chat-app-swiftui.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A20247289D8AC100C75FD4 /* chat_app_swiftuiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chat_app_swiftuiApp.swift; sourceTree = "<group>"; };
 		94A20249289D8AC100C75FD4 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				94865F2428B3409E002D09FF /* ChatsListRow.swift */,
 				94865F3E28BC90D3002D09FF /* ConversationTextMessage.swift */,
 				94865F4028BC90E0002D09FF /* ConversationPhotoMessage.swift */,
+				94865F4228BDD5A8002D09FF /* ContactsPicker.swift */,
 			);
 			path = ChatsView;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94865F4328BDD5A8002D09FF /* ContactsPicker.swift in Sources */,
 				94865F0828A4CE72002D09FF /* DatabaseService.swift in Sources */,
 				94865ED428A0D2BB002D09FF /* AppDelegate.swift in Sources */,
 				94865EDA28A15FAC002D09FF /* OnboardingContainerView.swift in Sources */,
