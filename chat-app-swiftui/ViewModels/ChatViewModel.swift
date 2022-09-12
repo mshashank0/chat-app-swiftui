@@ -76,6 +76,11 @@ class ChatViewModel: ObservableObject {
         }
     }
     
+    func clearSelectedChat() {
+        self.selectedChat = nil
+        self.messages.removeAll()
+    }
+    
     func getMessages() {
         
         // Check that there's a selected chat

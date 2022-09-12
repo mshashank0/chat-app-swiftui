@@ -340,6 +340,12 @@ struct ConversationView: View {
         
         .sheet(isPresented: $isContactsPickerShowing) {
             // When sheet is dismissed
+            
+            // Search for the conversation with selected participant
+            if let participant = participants.first {
+                chatViewModel.getChatFor(contact: participant)
+            }
+            
         } content: {
             ContactsPicker(isContactsPickerShowing: $isContactsPickerShowing,
                            selectedContacts: $participants)
