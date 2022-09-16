@@ -64,7 +64,7 @@ struct ContactsListView: View {
                     Button {
                         
                         // Search for an existing convo with this user
-                        chatViewModel.getChatFor(contact: user)
+                        chatViewModel.getChatFor(contacts: [user])
                         
                         // Display conversation view
                         isChatShowing = true

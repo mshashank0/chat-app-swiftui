@@ -72,7 +72,25 @@ struct ConversationView: View {
                                 
                                 let participant = participants.first
                                 
-                                Text("\(participant?.firstname ?? "") \(participant?.lastname ?? "")")
+                                Group {
+                                    if participants.count == 1 {
+                                    
+                                        Text("\(participant?.firstname ?? "") \(participant?.lastname ?? "")")
+                                    }
+                                    else if participants.count == 2 {
+                                        
+                                        let participant2 = participants[1]
+                                        
+                                        Text("\(participant?.firstname ?? ""), \(participant2.firstname ?? "")")
+                                    }
+                                    else if participants.count > 2 {
+                                        
+                                        let participant2 = participants[1]
+                                        
+                                        Text("\(participant?.firstname ?? ""), \(participant2.firstname ?? "") + \(participants.count - 2) others")
+                                            
+                                    }
+                                }
                                     .font(Font.chatHeading)
                                     .foregroundColor(Color("text-header"))
                             }
@@ -85,13 +103,17 @@ struct ConversationView: View {
                         }
                         
                         Spacer()
-                        
+
                         // Profile image
-                        if participants.count > 0 {
+                        if participants.count == 1 {
                             
                             let participant = participants.first
-                            
+                            // Display a single profile image
                             ProfilePicView(user: participant!)
+                        }
+                        else if participants.count > 1 {
+                            // Display group profile images
+                            GroupProfilePicView(users: participants)
                         }
                         else {
                             // New message
@@ -342,9 +364,7 @@ struct ConversationView: View {
             // When sheet is dismissed
             
             // Search for the conversation with selected participant
-            if let participant = participants.first {
-                chatViewModel.getChatFor(contact: participant)
-            }
+            chatViewModel.getChatFor(contacts: participants)
             
         } content: {
             ContactsPicker(isContactsPickerShowing: $isContactsPickerShowing,
