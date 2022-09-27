@@ -155,6 +155,18 @@ struct ConversationView: View {
                                         
                                         Spacer()
                                     }
+                                    else if participants.count > 1 {
+                                        
+                                        // This is a group chat and not a message from the user
+                                        // Display profile photo
+                                        let userOfMsg = participants.filter { p in
+                                            p.id == msg.senderid
+                                        }.first
+                                        if let userOfMsg = userOfMsg {
+                                            ProfilePicView(user: userOfMsg)
+                                                .padding(.trailing, 16)
+                                        }
+                                    }
                                     
                                     if msg.imageurl != "" {
                                         // Photo Message
@@ -165,8 +177,24 @@ struct ConversationView: View {
                                     }
                                     else {
                                         // Text Message
-                                        ConversationTextMessage(msg: msg.msg,
-                                                                isFromUser: isFromUser)
+                                        
+                                        // Determine if it's a group chat and a msg from another user
+                                        if participants.count > 1 && !isFromUser {
+                                            
+                                            let userOfMsg = participants.filter { p in
+                                                p.id == msg.senderid
+                                            }.first
+                                            
+                                            // Show a text msg with name
+                                            ConversationTextMessage(msg: msg.msg,
+                                                                    isFromUser: isFromUser,
+                                                                    name: "\(userOfMsg?.firstname ?? "") \(userOfMsg?.lastname ?? "")")
+                                        }
+                                        else {
+                                            // Text message with no name
+                                            ConversationTextMessage(msg: msg.msg,
+                                                                    isFromUser: isFromUser)
+                                        }
                                     }
                                     
                                     if !isFromUser {

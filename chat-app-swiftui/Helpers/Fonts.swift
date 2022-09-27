@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 extension Font {
+    
     public static var bodyParagraph: Font {
         return Font.custom("LexendDeca-Regular", size: 14)
     }
@@ -39,5 +40,9 @@ extension Font {
     
     public static var chatHeading: Font {
         return Font.custom("LexendDeca-SemiBold", size: 19)
+    }
+    
+    public static var chatName: Font {
+        return Font.custom("LexendDeca-SemiBold", size: 12)
     }
 }
