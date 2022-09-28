@@ -57,6 +57,7 @@
 		94A20259289D8AC200C75FD4 /* chat_app_swiftuiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A20258289D8AC200C75FD4 /* chat_app_swiftuiTests.swift */; };
 		94A20263289D8AC200C75FD4 /* chat_app_swiftuiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A20262289D8AC200C75FD4 /* chat_app_swiftuiUITests.swift */; };
 		94A20265289D8AC200C75FD4 /* chat_app_swiftuiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A20264289D8AC200C75FD4 /* chat_app_swiftuiUITestsLaunchTests.swift */; };
+		94C5AF7A28E408EA003E7636 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C5AF7928E408EA003E7636 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,7 @@
 		94A2025E289D8AC200C75FD4 /* chat-app-swiftuiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "chat-app-swiftuiUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A20262289D8AC200C75FD4 /* chat_app_swiftuiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chat_app_swiftuiUITests.swift; sourceTree = "<group>"; };
 		94A20264289D8AC200C75FD4 /* chat_app_swiftuiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chat_app_swiftuiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		94C5AF7928E408EA003E7636 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +244,7 @@
 				94865ED328A0D2BB002D09FF /* AppDelegate.swift */,
 				94A20247289D8AC100C75FD4 /* chat_app_swiftuiApp.swift */,
 				94A20271289D8C2700C75FD4 /* Views */,
+				94C5AF7828E408D7003E7636 /* Settings */,
 				94A20273289D8C5000C75FD4 /* ViewModels */,
 				94A20272289D8C3000C75FD4 /* Models */,
 				94A20274289D8C5600C75FD4 /* Services */,
@@ -340,6 +343,14 @@
 				94865EB7289D95D3002D09FF /* LexendDeca-SemiBold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		94C5AF7828E408D7003E7636 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				94C5AF7928E408EA003E7636 /* SettingsView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -508,6 +519,7 @@
 				94865EE828A23304002D09FF /* ProfileTextFieldStyle.swift in Sources */,
 				94865EC328A0CE0B002D09FF /* TabBarButton.swift in Sources */,
 				94865F0628A42E9E002D09FF /* ContactsViewModel.swift in Sources */,
+				94C5AF7A28E408EA003E7636 /* SettingsView.swift in Sources */,
 				94865F1428A5496E002D09FF /* ContactRow.swift in Sources */,
 				94865F2528B3409E002D09FF /* ChatsListRow.swift in Sources */,
 				94865EE028A1653A002D09FF /* VerificationView.swift in Sources */,

@@ -19,16 +19,22 @@ struct RootView: View {
     @State var isOnboarding = !AuthViewModel.isUserLoggedIn()
     @State var isChatShowing = false
     
+    @State var isSettingsShowing = false
+    
     var body: some View {
         ZStack {
             Color("background")
                 .ignoresSafeArea()
             VStack {
+                
                 switch selectedTab {
+                    
                 case .chats:
-                    ChatsListView(isChatShowing: $isChatShowing)
+                    ChatsListView(isChatShowing: $isChatShowing,
+                                  isSettingsShowing: $isSettingsShowing)
                 case .contacts:
-                    ContactsListView(isChatShowing: $isChatShowing)
+                    ContactsListView(isChatShowing: $isChatShowing,
+                                     isSettingsShowing: $isSettingsShowing)
                 }
                 
                 Spacer()
@@ -49,6 +55,12 @@ struct RootView: View {
         .fullScreenCover(isPresented: $isChatShowing, onDismiss: nil) {
             ConversationView(isChatShowing: $isChatShowing)
         }
+        .fullScreenCover(isPresented: $isSettingsShowing, onDismiss: nil, content: {
+            
+            // The Settings View
+            SettingsView(isSettingsShowing: $isSettingsShowing,
+                         isOnboarding: $isOnboarding)
+        })
         .onChange(of: scenePhase) { newPhase in
             
             if newPhase == .active {
@@ -60,8 +72,8 @@ struct RootView: View {
                 chatViewModel.chatListViewCleanup()
             }
         }
-
-
+        
+        
     }
 }
 
