@@ -22,8 +22,10 @@ struct ProfilePicView: View {
                 ZStack {
                     Circle()
                         .foregroundColor(.white)
+                    
                     Text(user.firstname?.prefix(1) ?? "")
                         .bold()
+                        .foregroundColor(Color("text-secondary"))
                 }
                 
             }

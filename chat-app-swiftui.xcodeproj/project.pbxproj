@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		942D67A428CEFB0F00DEED24 /* GroupProfilePicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942D67A328CEFB0F00DEED24 /* GroupProfilePicView.swift */; };
+		943306CC28E41E7300F9F4F5 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943306CB28E41E7300F9F4F5 /* SettingsViewModel.swift */; };
+		943306CE28E41E9600F9F4F5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943306CD28E41E9600F9F4F5 /* Constants.swift */; };
 		94865EB8289D95D3002D09FF /* LexendDeca-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94865EB5289D95D3002D09FF /* LexendDeca-Bold.ttf */; };
 		94865EB9289D95D3002D09FF /* LexendDeca-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94865EB6289D95D3002D09FF /* LexendDeca-Regular.ttf */; };
 		94865EBA289D95D3002D09FF /* LexendDeca-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94865EB7289D95D3002D09FF /* LexendDeca-SemiBold.ttf */; };
@@ -79,6 +81,8 @@
 
 /* Begin PBXFileReference section */
 		942D67A328CEFB0F00DEED24 /* GroupProfilePicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupProfilePicView.swift; sourceTree = "<group>"; };
+		943306CB28E41E7300F9F4F5 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		943306CD28E41E9600F9F4F5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		94865EB4289D959B002D09FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		94865EB5289D95D3002D09FF /* LexendDeca-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendDeca-Bold.ttf"; sourceTree = "<group>"; };
 		94865EB6289D95D3002D09FF /* LexendDeca-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendDeca-Regular.ttf"; sourceTree = "<group>"; };
@@ -309,6 +313,7 @@
 				94865ED628A1586C002D09FF /* AuthViewModel.swift */,
 				94865F0528A42E9E002D09FF /* ContactsViewModel.swift */,
 				94865F2028AE210C002D09FF /* ChatViewModel.swift */,
+				943306CB28E41E7300F9F4F5 /* SettingsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -331,6 +336,7 @@
 				94865F0928A4CFB8002D09FF /* TextHelper.swift */,
 				94865F1A28ADFB7E002D09FF /* RoundedCornerExtension.swift */,
 				94865F2228B08A60002D09FF /* DateHelper.swift */,
+				943306CD28E41E9600F9F4F5 /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -499,6 +505,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94865F4328BDD5A8002D09FF /* ContactsPicker.swift in Sources */,
+				943306CE28E41E9600F9F4F5 /* Constants.swift in Sources */,
 				94865F0828A4CE72002D09FF /* DatabaseService.swift in Sources */,
 				942D67A428CEFB0F00DEED24 /* GroupProfilePicView.swift in Sources */,
 				94865ED428A0D2BB002D09FF /* AppDelegate.swift in Sources */,
@@ -511,6 +518,7 @@
 				94865EE628A166E6002D09FF /* OnboardingButtonStyle.swift in Sources */,
 				94865F1228A5398F002D09FF /* ChatsListView.swift in Sources */,
 				94865EE228A1654C002D09FF /* ProfileView.swift in Sources */,
+				943306CC28E41E7300F9F4F5 /* SettingsViewModel.swift in Sources */,
 				94865EDC28A16497002D09FF /* WelcomeView.swift in Sources */,
 				94865F3D28B8972E002D09FF /* CacheService.swift in Sources */,
 				94865ED728A1586C002D09FF /* AuthViewModel.swift in Sources */,
