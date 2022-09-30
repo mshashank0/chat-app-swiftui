@@ -74,7 +74,7 @@ struct ConversationView: View {
                                 
                                 Group {
                                     if participants.count == 1 {
-                                    
+                                        
                                         Text("\(participant?.firstname ?? "") \(participant?.lastname ?? "")")
                                     }
                                     else if participants.count == 2 {
@@ -88,11 +88,11 @@ struct ConversationView: View {
                                         let participant2 = participants[1]
                                         
                                         Text("\(participant?.firstname ?? ""), \(participant2.firstname ?? "") + \(participants.count - 2) others")
-                                            
+                                        
                                     }
                                 }
-                                    .font(Font.chatHeading)
-                                    .foregroundColor(Color("text-header"))
+                                .font(Font.chatHeading)
+                                .foregroundColor(Color("text-header"))
                             }
                             else {
                                 // New message
@@ -103,7 +103,7 @@ struct ConversationView: View {
                         }
                         
                         Spacer()
-
+                        
                         // Profile image
                         if participants.count == 1 {
                             
@@ -393,8 +393,10 @@ struct ConversationView: View {
         .sheet(isPresented: $isContactsPickerShowing) {
             // When sheet is dismissed
             
-            // Search for the conversation with selected participant
-            chatViewModel.getChatFor(contacts: participants)
+            if participants.count > 0 {
+                // Search for the conversation with selected participant
+                chatViewModel.getChatFor(contacts: participants)
+            }
             
         } content: {
             ContactsPicker(isContactsPickerShowing: $isContactsPickerShowing,

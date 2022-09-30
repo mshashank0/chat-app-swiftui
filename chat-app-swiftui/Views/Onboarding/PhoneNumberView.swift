@@ -13,6 +13,9 @@ struct PhoneNumberView: View {
     @Binding var currentStep: OnboardingStep
     @State var phoneNumber: String
     
+    @State var isButtonDisabled: Bool = false
+    @State var isErrorLabelVisible: Bool = false
+    
     var body: some View {
         VStack {
                         
@@ -51,22 +54,44 @@ struct PhoneNumberView: View {
                 .padding()
             }
             
+            // Error label
+            Text("Please enter valid phone number")
+                .foregroundColor(.red)
+                .font(Font.smallText)
+                .padding()
+                .opacity(isErrorLabelVisible ? 1.0 : 0)
+            
+            
             Spacer()
             
             Button {
+                
+                isErrorLabelVisible = false
+                isButtonDisabled = true
+                
                 AuthViewModel.sendPhoneNumber(phone: phoneNumber) { error in
                     if error == nil {
                         currentStep = .verification
                     }
                     else {
                         // show error
+                        isErrorLabelVisible = true
                     }
+                    isButtonDisabled = false
                 }
             } label: {
-                Text("Next")
+                HStack {
+                    Text("Next")
+                    
+                    if isButtonDisabled {
+                        ProgressView()
+                            .padding(.leading, 2)
+                    }
+                }
             }
             .buttonStyle(OnboardingButtonStyle())
             .padding(.bottom, 87)
+            .disabled(isButtonDisabled)
 
         }
         .padding(.horizontal, 20)
@@ -75,6 +100,6 @@ struct PhoneNumberView: View {
 
 struct PhoneNumberView_Previews: PreviewProvider {
     static var previews: some View {
-        PhoneNumberView(currentStep: .constant(.phoneNumber), phoneNumber: "")
+        PhoneNumberView(currentStep: .constant(.phoneNumber), phoneNumber: "", isButtonDisabled: false, isErrorLabelVisible: false)
     }
 }

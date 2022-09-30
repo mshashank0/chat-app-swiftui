@@ -27,57 +27,60 @@ struct ContactsPicker: View {
                     
                     ForEach(contactsViewModel.filteredUsers) { user in
                         
-                        // Determine if this user is a selectedContact
-                        let isSelectedContact = selectedContacts.contains { u in
-                            u.id == user.id
-                        }
-                        
-                        ZStack {
-                            ContactRow(user: user)
-                                
+                        if user.isactive {
+                            // Determine if this user is a selectedContact
+                            let isSelectedContact = selectedContacts.contains { u in
+                                u.id == user.id
+                            }
                             
-                            HStack {
-                                Spacer()
-                                
-                                Button {
+                            ZStack {
+                                ContactRow(user: user)
                                     
-                                    // Toggle the user to be selected or not
-                                    if isSelectedContact {
+                                
+                                HStack {
+                                    Spacer()
+                                    
+                                    Button {
                                         
-                                        // Find index of this contact within the array
-                                        let index = selectedContacts.firstIndex(of: user)
-                                        
-                                        // Remove this contact from the selected pool
-                                        if let index = index {
-                                            selectedContacts.remove(at: index)
-                                        }
-                                    }
-                                    else {
-                                        
-                                        // Impose the limit of 3
-                                        if selectedContacts.count < 3 {
-                                        
-                                            // Select this contact
-                                            selectedContacts.append(user)
+                                        // Toggle the user to be selected or not
+                                        if isSelectedContact {
+                                            
+                                            // Find index of this contact within the array
+                                            let index = selectedContacts.firstIndex(of: user)
+                                            
+                                            // Remove this contact from the selected pool
+                                            if let index = index {
+                                                selectedContacts.remove(at: index)
+                                            }
                                         }
                                         else {
-                                            // TODO: Show message to say limit reached
+                                            
+                                            // Impose the limit of 3
+                                            if selectedContacts.count < 3 {
+                                            
+                                                // Select this contact
+                                                selectedContacts.append(user)
+                                            }
+                                            else {
+                                                // TODO: Show message to say limit reached
+                                            }
                                         }
+                                        
+                                    } label: {
+                                        
+                                        Image(systemName: isSelectedContact ? "checkmark.circle.fill" :
+                                                "checkmark.circle")
+                                            .resizable()
+                                            .foregroundColor(Color("button-primary"))
+                                            .frame(width: 25, height: 25)
                                     }
-                                    
-                                } label: {
-                                    
-                                    Image(systemName: isSelectedContact ? "checkmark.circle.fill" :
-                                            "checkmark.circle")
-                                        .resizable()
-                                        .foregroundColor(Color("button-primary"))
-                                        .frame(width: 25, height: 25)
-                                }
 
+                                }
                             }
+                            .padding(.top, 18)
+                            .padding(.horizontal)
                         }
-                        .padding(.top, 18)
-                        .padding(.horizontal)
+                        
                     }
                 }
                 

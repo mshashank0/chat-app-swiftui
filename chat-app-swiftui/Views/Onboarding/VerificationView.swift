@@ -16,6 +16,8 @@ struct VerificationView: View {
     @Binding var currentStep: OnboardingStep
     @State var verificationCode = ""
     @Binding var isOnboarding: Bool
+    @State var isButtonDisabled: Bool = false
+    @State var isErrorLabelVisible: Bool = false
     
     var body: some View {
         VStack {
@@ -55,9 +57,19 @@ struct VerificationView: View {
                 .padding()
             }
             
+            // Error label
+            Text("Invalid code")
+                .foregroundColor(.red)
+                .font(Font.smallText)
+                .padding()
+                .opacity(isErrorLabelVisible ? 1.0 : 0)
+            
             Spacer()
             
             Button {
+                
+                isErrorLabelVisible = false
+                isButtonDisabled = true
                 
                 AuthViewModel.verifyCode(code: verificationCode) { error in
                     if error == nil {
@@ -82,13 +94,24 @@ struct VerificationView: View {
                     }
                     else {
                         // show error
+                        isErrorLabelVisible = true
                     }
+                    
+                    isButtonDisabled = false
                 }
             } label: {
-                Text("Next")
+                HStack {
+                    Text("Next")
+                    
+                    if isButtonDisabled {
+                        ProgressView()
+                            .padding(.leading, 2)
+                    }
+                }
             }
             .buttonStyle(OnboardingButtonStyle())
             .padding(.bottom, 87)
+            .disabled(isButtonDisabled)
 
         }
         .padding(.horizontal, 20)
@@ -97,6 +120,6 @@ struct VerificationView: View {
 
 struct VerificationView_Previews: PreviewProvider {
     static var previews: some View {
-        VerificationView(currentStep: .constant(.verification), isOnboarding: .constant(false))
+        VerificationView(currentStep: .constant(.verification), isOnboarding: .constant(false), isButtonDisabled: false, isErrorLabelVisible: false)
     }
 }
